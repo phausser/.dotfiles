@@ -8,5 +8,5 @@ autoload -U compinit
 compinit -i
 
 # Load local alias/profile
-source ~/.profile
-source ~/.aliases
+[[ -f $HOME/.profile ]] && source $HOME/.profile
+[[ -f $HOME/.aliases ]] && source $HOME/.aliases
