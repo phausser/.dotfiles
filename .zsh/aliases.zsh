@@ -4,7 +4,7 @@ alias la="ls -la"
 alias lt="ls -lt"
 
 alias ..="cd .."
-alias ...="cd ../cd.."
+alias ...="cd ../.."
 
 alias dh="df -h"
 
