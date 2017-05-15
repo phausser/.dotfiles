@@ -7,6 +7,7 @@ set nocompatible
 syntax on
 filetype plugin indent on
 colors myease
+colors monokai
 
 " Encoding
 set encoding=latin-1
@@ -59,3 +60,6 @@ let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 map <silent><C-b> :CtrlPBuffer<CR>
 map <silent><C-l> :CtrlPLine<CR>
+
+" Airline
+set laststatus=2
