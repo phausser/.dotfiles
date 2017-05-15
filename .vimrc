@@ -3,20 +3,13 @@
 " Escape vi
 set nocompatible
 
-" Pathogen
-runtime bundle/vim-pathogen/autoload/pathogen.vim
-execute pathogen#infect()
-
 " Highlighting and colors
 syntax on
 filetype plugin indent on
 colors myease
 
 " Encoding
-set encoding=utf-8
-
-" NERDTree configuration
-map <Leader>n :NERDTreeToggle<CR>
+set encoding=latin-1
 
 " Line numbers
 set number
@@ -31,7 +24,7 @@ set smarttab
 set expandtab
 
 " Show trailing spaces and highlight hard tabs
-set list listchars=tab:»·,trail:·
+"set list listchars=tab:»·,trail:·
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
@@ -52,3 +45,17 @@ set hlsearch
 " Files, backups and undo
 set nobackup
 set noswapfile
+
+" NERDTree configuration
+map <Leader>n :NERDTreeToggle<CR>
+
+" Pathogen
+runtime bundle/vim-pathogen/autoload/pathogen.vim
+execute pathogen#infect()
+
+" CtrlP
+set runtimepath^=~/.vim/bundle/ctrlp
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+map <silent><C-b> :CtrlPBuffer<CR>
+map <silent><C-l> :CtrlPLine<CR>
