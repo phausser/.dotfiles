@@ -6,7 +6,6 @@ set nocompatible
 " Highlighting and colors
 syntax on
 filetype plugin indent on
-colors myease
 colors monokai
 
 " Encoding
@@ -55,7 +54,7 @@ runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
 
 " CtrlP
-set runtimepath^=~/.vim/bundle/ctrlp
+" set runtimepath^=~/.vim/bundle/ctrlp
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 map <silent><C-b> :CtrlPBuffer<CR>
@@ -68,3 +67,8 @@ let g:airline_theme='papercolor'
 " gitgutter
 let g:gitgutter_highlight_lines = 1
 let g:gitgutter_signs = 0
+
+" Local config
+if filereadable(glob("~/.vimrc.local"))
+    source ~/.vimrc.local
+endif
