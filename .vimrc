@@ -63,6 +63,7 @@ map <silent><C-l> :CtrlPLine<CR>
 
 " Airline
 set laststatus=2
+let g:airline_theme='papercolor'
 
 " gitgutter
 let g:gitgutter_highlight_lines = 1
