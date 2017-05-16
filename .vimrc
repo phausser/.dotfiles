@@ -10,7 +10,7 @@ colors myease
 colors monokai
 
 " Encoding
-set encoding=latin-1
+set encoding=utf-8
 
 " Line numbers
 set number
