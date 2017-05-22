@@ -2,7 +2,11 @@ autoload -Uz promptinit
 promptinit
 
 function prompt_char {
-    git branch >/dev/null 2>/dev/null && echo -n "%F{blue}(" && git rev-parse --abbrev-ref HEAD | tr -d '\012' && echo -n ")%f "
+    git branch >/dev/null 2>/dev/null &&
+        echo -n "%F{blue}(" &&
+        git rev-parse --abbrev-ref HEAD | tr -d '\012' &&
+        if [[ -n $(git status -s) ]]; then echo -n "*"; fi &&
+        echo -n ")%f "
 }
 
 setopt PROMPT_SUBST
