@@ -49,7 +49,7 @@ set nobackup
 set noswapfile
 
 " NERDTree configuration
-map <Leader>n :NERDTreeToggle<CR>
+map <silent><C-n> :NERDTreeToggle<CR>
 
 " Pathogen
 runtime bundle/vim-pathogen/autoload/pathogen.vim
