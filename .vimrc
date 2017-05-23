@@ -6,6 +6,7 @@ set nocompatible
 " Highlighting and colors
 syntax on
 filetype plugin indent on
+set t_Co=256
 colors molokai
 
 " Encoding
