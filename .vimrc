@@ -8,6 +8,7 @@ syntax on
 filetype plugin indent on
 set t_Co=256
 colors molokai
+set cursorline
 
 " Encoding
 set encoding=utf-8
