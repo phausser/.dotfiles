@@ -22,9 +22,10 @@ set shiftwidth=4
 set softtabstop=4
 set smarttab
 set expandtab
+set showmatch
 
 " Show trailing spaces and highlight hard tabs
-"set list listchars=tab:»·,trail:·
+set list listchars=tab:>>,trail:.,precedes:<,extends:>
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
@@ -48,12 +49,17 @@ set smartcase
 set nobackup
 set noswapfile
 
-" NERDTree configuration
-map <silent><C-n> :NERDTreeToggle<CR>
+" Tab handling
+nnoremap <C-i> :tabnext<CR>
+nnoremap <C-t> :tabnew<CR>
+set wildchar=<Tab> wildmenu wildmode=full
 
 " Pathogen
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
+
+" NERDTree configuration
+map <silent><C-n> :NERDTreeToggle<CR>
 
 " CtrlP
 " set runtimepath^=~/.vim/bundle/ctrlp
@@ -64,7 +70,7 @@ map <silent><C-l> :CtrlPLine<CR>
 
 " Airline
 set laststatus=2
-let g:airline_theme='papercolor'
+let g:airline_theme='molokai'
 
 " gitgutter
 let g:gitgutter_highlight_lines = 1
