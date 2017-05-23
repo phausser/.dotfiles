@@ -6,7 +6,7 @@ set nocompatible
 " Highlighting and colors
 syntax on
 filetype plugin indent on
-colors monokai
+colors molokai
 
 " Encoding
 set encoding=utf-8
