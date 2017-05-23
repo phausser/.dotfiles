@@ -53,7 +53,10 @@ set noswapfile
 " Tab handling
 nnoremap <C-i> :tabnext<CR>
 nnoremap <C-t> :tabnew<CR>
+
+" Misc
 set wildchar=<Tab> wildmenu wildmode=full
+set diffopt=vertical
 
 " Pathogen
 runtime bundle/vim-pathogen/autoload/pathogen.vim
