@@ -80,6 +80,7 @@ let g:airline_theme='ravenpower'
 " gitgutter
 let g:gitgutter_highlight_lines = 1
 let g:gitgutter_signs = 0
+set updatetime=250
 
 " Local config
 if filereadable(glob("~/.vimrc.local"))
