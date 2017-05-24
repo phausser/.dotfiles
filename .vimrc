@@ -56,6 +56,7 @@ nnoremap <C-i> :tabnext<CR>
 nnoremap <C-t> :tabnew<CR>
 
 " Misc
+let mapleader=","
 set wildchar=<Tab> wildmenu wildmode=full
 set diffopt=vertical
 
@@ -81,6 +82,9 @@ let g:airline_theme='ravenpower'
 let g:gitgutter_highlight_lines = 1
 let g:gitgutter_signs = 0
 set updatetime=250
+
+" vimwiki
+let g:vimwiki_list = [{'path': '~/.vimwiki' }]
 
 " Local config
 if filereadable(glob("~/.vimrc.local"))
