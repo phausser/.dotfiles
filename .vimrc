@@ -24,7 +24,6 @@ set shiftwidth=4
 set softtabstop=4
 set smarttab
 set expandtab
-set showmatch
 
 " Show trailing spaces and highlight hard tabs
 set list listchars=tab:>>,trail:.,precedes:<,extends:>
@@ -56,11 +55,14 @@ nnoremap <C-i> :tabnext<CR>
 nnoremap <C-t> :tabnew<CR>
 
 " Misc
-let mapleader=","
+let mapleader = ","
 set wildchar=<Tab> wildmenu wildmode=full
 set diffopt=vertical
 
 " Pathogen
+if filereadable(glob("~/.pathogen_disabled"))
+    source ~/.pathogen_disabled
+endif
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
 
@@ -76,7 +78,7 @@ map <silent><C-l> :CtrlPLine<CR>
 
 " Airline
 set laststatus=2
-let g:airline_theme='ravenpower'
+let g:airline_theme='molokai'
 
 " gitgutter
 let g:gitgutter_highlight_lines = 1
