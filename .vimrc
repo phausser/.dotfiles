@@ -70,7 +70,6 @@ execute pathogen#infect()
 map <silent><C-n> :NERDTreeToggle<CR>
 
 " CtrlP
-" set runtimepath^=~/.vim/bundle/ctrlp
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 map <silent><C-b> :CtrlPBuffer<CR>
