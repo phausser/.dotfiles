@@ -80,8 +80,8 @@ set laststatus=2
 let g:airline_theme='molokai'
 
 " gitgutter
-let g:gitgutter_highlight_lines = 1
-let g:gitgutter_signs = 0
+let g:gitgutter_highlight_lines = 0
+let g:gitgutter_signs = 1
 set updatetime=250
 
 " vimwiki
