@@ -1,5 +1,6 @@
 " pat's ~/.vimrc
 
+
 " Escape vi
 set nocompatible
 
@@ -48,8 +49,13 @@ set ignorecase
 set smartcase
 
 " Files, backups and undo
-set nobackup
+if !isdirectory($HOME."/.backups")
+    silent! execute "!mkdir ~/.backups/"
+endif
+set backup
+set backupdir=~/.backups
 set noswapfile
+
 
 " Tab handling
 nnoremap <C-i> :tabnext<CR>
@@ -59,6 +65,7 @@ nnoremap <C-t> :tabnew<CR>
 let mapleader = ","
 set wildchar=<Tab> wildmenu wildmode=full
 set diffopt=vertical
+set autoread
 
 " Pathogen
 if filereadable(glob("~/.pathogen_disabled"))
