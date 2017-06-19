@@ -5,7 +5,7 @@ function prompt_char {
     git branch >/dev/null 2>/dev/null &&
         echo -n "%F{blue}(" &&
         git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\012' &&
-        if [[ -n $(git status -s) ]]; then echo -n "%F{red}*%F{blue}"; fi &&
+        if [[ -n $(git status -s 2>/dev/null) ]]; then echo -n "%F{red}*%F{blue}"; fi &&
         echo -n ")%f "
 }
 
