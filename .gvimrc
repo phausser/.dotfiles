@@ -14,7 +14,7 @@ fun! MySys()
 endfun
 
 if MySys() == "mac"
-    set guifont=Menlo:h14
+    set guifont=Hack:h14
     set shell=/bin/bash
 elseif MySys() == "win"
     set guifont=Bitstream\ Vera\ Sans\ Mono:h10
