@@ -19,7 +19,7 @@ if MySys() == "mac"
 elseif MySys() == "win"
     set guifont=Bitstream\ Vera\ Sans\ Mono:h10
 elseif MySys() == "unix"
-    set guifont=Hack\ 10
+    set guifont=Hack\ 12
     set shell=/bin/bash
 endif
 
