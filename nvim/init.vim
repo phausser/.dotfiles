@@ -3,25 +3,35 @@
 " SETTINGS
 let mapleader=','
 
+" screen
+set termguicolors
 set encoding=utf-8
 set list listchars=tab:>>,trail:.,precedes:<,extends:>
 set number
 set ruler
 set cursorcolumn
 set cursorline
-
+" cmd
+set history=100
+set showcmd
+" search
 set incsearch
 set hlsearch
 set ignorecase
 set smartcase
-
+" text
 set nowrap
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set smarttab
 set expandtab
-
+set colorcolumn=80
+" backup
+set noswapfile
+set nobackup
+set nowritebackup
+" etc
 syntax enable
 colorscheme monokai
 
