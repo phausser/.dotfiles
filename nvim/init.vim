@@ -1,4 +1,4 @@
-" NeoVim config init.vim
+" Neovim config init.vim by pat
 
 " SETTINGS
 let mapleader=','
@@ -44,22 +44,29 @@ Plug 'https://github.com/vim-airline/vim-airline'
 Plug 'https://github.com/vim-airline/vim-airline-themes'
 Plug 'https://github.com/airblade/vim-gitgutter.git'
 
+Plug 'https://github.com/elixir-editors/vim-elixir.git'
+Plug 'https://github.com/slashmili/alchemist.vim.git'
+
+Plug 'https://github.com/vim-scripts/TeTrIs.vim.git'
+
 call plug#end()
 
-" NT
+" nt
 map <silent><C-n> :NERDTreeToggle<cr>
-
-" AIRLINE
+" airline
 let g:airline#extensions#tabline#enabled=1
 let g:airline_theme='cool'
 let g:airline_powerline_fonts=1
-
-" CTRLP
+" ctrlp
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
-
-" VIMGUTTER
+" vimgutter
 let g:gitgutter_highlight_lines=0
 let g:gitgutter_signs=1
 set updatetime=250
+
+" Local config
+if filereadable(glob("~/.nvim"))
+    source ~/.nvim
+endif
 
