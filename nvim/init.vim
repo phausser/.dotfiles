@@ -43,6 +43,7 @@ Plug 'https://github.com/kien/ctrlp.vim.git'
 Plug 'https://github.com/vim-airline/vim-airline'
 Plug 'https://github.com/vim-airline/vim-airline-themes'
 Plug 'https://github.com/airblade/vim-gitgutter.git'
+Plug 'https://github.com/vimwiki/vimwiki.git'
 
 Plug 'https://github.com/elixir-editors/vim-elixir.git'
 Plug 'https://github.com/slashmili/alchemist.vim.git'
@@ -64,6 +65,8 @@ let g:ctrlp_cmd = 'CtrlP'
 let g:gitgutter_highlight_lines=0
 let g:gitgutter_signs=1
 set updatetime=250
+" vimwiki
+let g:vimwiki_list = [{'path': '~/.vimwiki' }]
 
 " Local config
 if filereadable(glob("~/.nvim"))
