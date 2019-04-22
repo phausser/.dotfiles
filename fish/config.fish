@@ -19,3 +19,7 @@ if test -e ~/.aliases
     . ~/.aliases
 end
 
+if test -e ~/.fishrc
+    . ~/.fishrc
+end
+
