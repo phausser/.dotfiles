@@ -23,3 +23,9 @@ if test -e ~/.fishrc
     . ~/.fishrc
 end
 
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+eval (eval /Users/pat/Applications/conda/bin/conda "shell.fish" "hook" $argv)
+# <<< conda initialize <<<
+
