@@ -115,8 +115,9 @@ let g:vimwiki_list = [{'path': '~/.vimwiki' }]
 Plug 'https://github.com/vim-scripts/TeTrIs.vim.git'
 
 
+" Import .vimrc.plug
 if filereadable(glob("~/.vimrc.plug"))
-    source ~/.vimrc.local
+    source ~/.vimrc.plug
 endif
 
 
