@@ -1,37 +1,52 @@
 " pat's ~/.vimrc
 
 
-" Escape vi
+let mapleader = ","
 set nocompatible
 
-" Highlighting and colors
+
+" Text
 syntax on
 filetype plugin indent on
-set t_Co=256
-colors molokai
-set cursorline
-set cursorcolumn
 
-" Encoding
 set encoding=utf-8
-
-" Line numbers
 set number
 set ruler
-
-" Text, tab and indent
 set nowrap
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set smarttab
 set expandtab
+set diffopt=vertical
 
-" Show trailing spaces and highlight hard tabs
+
+" Appearance
+set t_Co=256
+set termguicolors
 set list listchars=tab:>>,trail:.,precedes:<,extends:>
+colors molokai
+set cursorline
+set cursorcolumn
 
-" allow backspacing over everything in insert mode
+
+" Gui
+nnoremap <C-i> :tabnext<CR>
+nnoremap <C-t> :tabnew<CR>
+set wildchar=<Tab> wildmenu wildmode=full
+
+
+" Editing
 set backspace=indent,eol,start
+set autoread
+
+
+" Searching
+set incsearch
+set hlsearch
+set ignorecase
+set smartcase
+
 
 " Strip trailing whitespaces on each save
 fun! <SID>StripTrailingWhitespaces()
@@ -42,13 +57,8 @@ fun! <SID>StripTrailingWhitespaces()
 endfun
 autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
-" Search
-set incsearch
-set hlsearch
-set ignorecase
-set smartcase
 
-" Files, backups and undo
+" Backups to ~/.backups
 if !isdirectory($HOME."/.backups")
     silent! execute "!mkdir ~/.backups/"
 endif
@@ -57,45 +67,64 @@ set backupdir=~/.backups
 set noswapfile
 
 
-" Tab handling
-nnoremap <C-i> :tabnext<CR>
-nnoremap <C-t> :tabnew<CR>
-
-" Misc
-let mapleader = ","
-set wildchar=<Tab> wildmenu wildmode=full
-set diffopt=vertical
-set autoread
-
-" Pathogen
-if filereadable(glob("~/.pathogen_disabled"))
-    source ~/.pathogen_disabled
+" Plug
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
-runtime bundle/vim-pathogen/autoload/pathogen.vim
-execute pathogen#infect()
 
-" NERDTree configuration
+call plug#begin('~/.vim/plugged')
+
+
+" NERDTree
+Plug 'https://github.com/scrooloose/nerdtree.git'
 map <silent><C-n> :NERDTreeToggle<CR>
 
+
 " CtrlP
+Plug 'https://github.com/kien/ctrlp.vim.git'
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 map <silent><C-b> :CtrlPBuffer<CR>
 map <silent><C-l> :CtrlPLine<CR>
 
-" Airline
-set laststatus=2
-let g:airline_theme='base16_grayscale'
 
-" gitgutter
+" Airline
+Plug 'https://github.com/vim-airline/vim-airline'
+Plug 'https://github.com/vim-airline/vim-airline-themes'
+set laststatus=2
+let g:airline#extensions#tabline#enabled=1
+let g:airline_theme='wombat'
+let g:airline_powerline_fonts=0
+
+
+" vim-gitgutter
+Plug 'https://github.com/airblade/vim-gitgutter.git'
 let g:gitgutter_highlight_lines = 0
 let g:gitgutter_signs = 1
 set updatetime=250
 
-" vimwiki
+
+" VimWiki
+Plug 'https://github.com/vimwiki/vimwiki.git'
 let g:vimwiki_list = [{'path': '~/.vimwiki' }]
 
-" Local config
+
+" Tetris <Leader>te
+Plug 'https://github.com/vim-scripts/TeTrIs.vim.git'
+
+
+if filereadable(glob("~/.vimrc.plug"))
+    source ~/.vimrc.local
+endif
+
+
+call plug#end()
+
+
+" Import .vimrc.local
 if filereadable(glob("~/.vimrc.local"))
     source ~/.vimrc.local
 endif
+

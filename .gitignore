@@ -1,2 +1,4 @@
 .vim/.netrwhist
+.vim/autoload/
+.vim/plugged/
 fish/fishd.elements

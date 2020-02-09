@@ -14,16 +14,16 @@ fun! MySys()
 endfun
 
 if MySys() == "mac"
-    set guifont=Hack:h14
     set guifont=Fira\ Code:h14
     set shell=/bin/bash
     set macligatures
 elseif MySys() == "win"
     set guifont=Bitstream\ Vera\ Sans\ Mono:h10
 elseif MySys() == "unix"
-    set guifont=Hack\ 12
+    set guifont=FiraCode\ 11
     set shell=/bin/bash
 endif
 
 " Hide Toolbar from MacVim
 set guioptions-=T
+
