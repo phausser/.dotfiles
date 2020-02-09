@@ -79,7 +79,7 @@ call plug#begin('~/.vim/plugged')
 
 " NERDTree
 Plug 'https://github.com/scrooloose/nerdtree.git'
-map <silent><C-n> :NERDTreeToggle<CR>
+map <silent><C-o> :NERDTreeToggle<CR>
 
 
 " CtrlP
