@@ -111,6 +111,23 @@ Plug 'https://github.com/vimwiki/vimwiki.git'
 let g:vimwiki_list = [{'path': '~/.vimwiki' }]
 
 
+" Surround
+Plug 'https://github.com/tpope/vim-surround'
+
+
+" Org Mode
+"Plug 'https:///github.com/jceb/vim-orgmode'
+
+
+" Syntastic
+Plug 'https://github.com/scrooloose/syntastic'
+
+
+" Rainbow Brackets
+Plug 'https://github.com/luochen1990/rainbow'
+let g:rainbow_active = 1
+
+
 " Tetris <Leader>te
 Plug 'https://github.com/vim-scripts/TeTrIs.vim.git'
 
