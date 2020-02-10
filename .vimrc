@@ -116,7 +116,8 @@ Plug 'https://github.com/tpope/vim-surround'
 
 
 " Org Mode
-"Plug 'https:///github.com/jceb/vim-orgmode'
+Plug 'https:///github.com/jceb/vim-orgmode'
+Plug 'https://github.com/tpope/vim-speeddating'
 
 
 " Syntastic
