@@ -1,8 +1,8 @@
 " pat's ~/.vimrc
 
 
-let mapleader = ","
 set nocompatible
+let mapleader = ","
 
 
 " Text
@@ -22,10 +22,9 @@ set diffopt=vertical
 
 
 " Appearance
-set t_Co=256
-set termguicolors
-set list listchars=tab:>>,trail:.,precedes:<,extends:>
 colors molokai
+set t_Co=256
+set list listchars=tab:>>,trail:.,precedes:<,extends:>
 set cursorline
 set cursorcolumn
 
@@ -95,7 +94,7 @@ Plug 'https://github.com/vim-airline/vim-airline'
 Plug 'https://github.com/vim-airline/vim-airline-themes'
 set laststatus=2
 let g:airline#extensions#tabline#enabled=1
-let g:airline_theme='wombat'
+let g:airline_theme='cool'
 let g:airline_powerline_fonts=0
 
 
