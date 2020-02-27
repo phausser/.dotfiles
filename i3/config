@@ -30,7 +30,7 @@ font pango:Fira Code Retina Bold 12
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec kitty 
+bindsym $mod+Return exec kitty
 
 # kill focused window
 bindsym $mod+Shift+x kill
@@ -175,8 +175,8 @@ bar {
         statusline #888888
         separator  #666666
 
-        focused_workspace  #ffffff #ffffff #888888
-        active_workspace   #222222 #222222 #EEEEEE
+        focused_workspace  #222222 #222222 #FFFFFF
+        active_workspace   #222222 #222222 #CCCCCC
         inactive_workspace #333333 #222222 #888888
         urgent_workspace   #FF0066 #FF0066 #FFDDEE
         binding_mode       #FF0066 #FF0066 #FFDDEE
