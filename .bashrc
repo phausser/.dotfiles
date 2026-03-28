@@ -85,6 +85,6 @@ alias la='ls -la'
 alias lt='ls -lt'
 
 # Local overrides
-[[ -f "$HOME/.bashrc.local" ]] && source "$HOME/.bashrc.local"
 [[ -f "$HOME/.profile" ]] && source "$HOME/.profile"
 [[ -f "$HOME/.aliases" ]] && source "$HOME/.aliases"
+[[ -f "$HOME/.bashrc.local" ]] && source "$HOME/.bashrc.local"

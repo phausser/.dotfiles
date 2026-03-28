@@ -101,6 +101,6 @@ compinit -i
 
 
 # LOAD LOCAL CONFIGURATION
-[[ -f $HOME/.zshrc.local ]] && source $HOME/.zshrc.local
 [[ -f $HOME/.profile ]] && source $HOME/.profile
 [[ -f $HOME/.aliases ]] && source $HOME/.aliases
+[[ -f $HOME/.zshrc.local ]] && source $HOME/.zshrc.local
