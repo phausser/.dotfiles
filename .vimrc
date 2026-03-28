@@ -1,4 +1,4 @@
-" pat's ~/.vimrc
+" pat's ~/.vimrc by patrickhausser
 
 
 set nocompatible

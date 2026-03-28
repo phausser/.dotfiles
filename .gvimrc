@@ -1,4 +1,4 @@
-" pat's ~/.gvimrc
+" ~/.gvimrc by patrickhausser
 
 " Set font according to system
 if has('macunix')

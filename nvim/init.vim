@@ -1,43 +1,47 @@
-" Neovim config init.vim by pat
+" NEOVIM CONFIG by patrickhausser
 
-" SETTINGS
-let mapleader=','
-
+" Core settings
+let mapleader = ','
 filetype plugin indent on
 
-" screen
+" UI
 set termguicolors
 set encoding=utf-8
 set list listchars=tab:>>,trail:.,precedes:<,extends:>
 set number
 set ruler
-set cursorcolumn
 set cursorline
-" cmd
+set cursorcolumn
+set colorcolumn=80
+
+" Command line
 set history=100
 set showcmd
-" search
+
+" Search
 set incsearch
 set hlsearch
 set ignorecase
 set smartcase
-" text
+
+" Text
 set nowrap
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set smarttab
 set expandtab
-set colorcolumn=80
-" backup
+
+" Backups
 set noswapfile
 set nobackup
 set nowritebackup
-" etc
+
+" Theme
 syntax enable
 colorscheme monokai
 
-" PLUG
+" Plugins (vim-plug)
 if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
     silent !curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs
         \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -52,31 +56,30 @@ Plug 'https://github.com/vim-airline/vim-airline'
 Plug 'https://github.com/vim-airline/vim-airline-themes'
 Plug 'https://github.com/airblade/vim-gitgutter.git'
 Plug 'https://github.com/vimwiki/vimwiki.git'
-
 Plug 'https://github.com/elixir-editors/vim-elixir.git'
 Plug 'https://github.com/slashmili/alchemist.vim.git'
-
 Plug 'https://github.com/vim-scripts/TeTrIs.vim.git'
 
 call plug#end()
 
-" nt
+" Mappings
 nnoremap <silent><C-n> :NERDTreeToggle<CR>
-" airline
-let g:airline#extensions#tabline#enabled=1
-let g:airline_theme='cool'
-let g:airline_powerline_fonts=1
-" ctrlp
+
+" Plugin settings
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_theme = 'cool'
+let g:airline_powerline_fonts = 1
+
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
-" vimgutter
-let g:gitgutter_highlight_lines=0
-let g:gitgutter_signs=1
-set updatetime=250
-" vimwiki
-let g:vimwiki_list = [{'path': '~/.vimwiki' }]
 
-" Local config
+let g:gitgutter_highlight_lines = 0
+let g:gitgutter_signs = 1
+set updatetime=250
+
+let g:vimwiki_list = [{'path': '~/.vimwiki'}]
+
+" Local overrides
 if filereadable(expand('~/.nvim'))
     source ~/.nvim
 endif
