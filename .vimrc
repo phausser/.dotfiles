@@ -22,8 +22,7 @@ set diffopt=vertical
 
 
 " Appearance
-colors molokai
-set t_Co=256
+colorscheme molokai
 set list listchars=tab:>>,trail:.,precedes:<,extends:>
 set cursorline
 set cursorcolumn
@@ -54,12 +53,15 @@ fun! <SID>StripTrailingWhitespaces()
     %s/\s\+$//e
     call cursor(l, c)
 endfun
-autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
+augroup pat_trim_whitespace
+  autocmd!
+  autocmd BufWritePre * call <SID>StripTrailingWhitespaces()
+augroup END
 
 
 " Backups to ~/.backups
-if !isdirectory($HOME."/.backups")
-    silent! execute "!mkdir ~/.backups/"
+if !isdirectory(expand('~/.backups'))
+  call mkdir(expand('~/.backups'), 'p')
 endif
 set backup
 set backupdir=~/.backups
@@ -78,15 +80,15 @@ call plug#begin('~/.vim/plugged')
 
 " NERDTree
 Plug 'https://github.com/scrooloose/nerdtree.git'
-map <silent><C-o> :NERDTreeToggle<CR>
+nnoremap <silent><C-o> :NERDTreeToggle<CR>
 
 
 " CtrlP
 Plug 'https://github.com/kien/ctrlp.vim.git'
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
-map <silent><C-b> :CtrlPBuffer<CR>
-map <silent><C-l> :CtrlPLine<CR>
+nnoremap <silent><C-b> :CtrlPBuffer<CR>
+nnoremap <silent><C-l> :CtrlPLine<CR>
 
 
 " Airline
@@ -115,7 +117,7 @@ Plug 'https://github.com/tpope/vim-surround'
 
 
 " Org Mode
-Plug 'https:///github.com/jceb/vim-orgmode'
+Plug 'https://github.com/jceb/vim-orgmode'
 Plug 'https://github.com/tpope/vim-speeddating'
 
 
@@ -133,8 +135,8 @@ Plug 'https://github.com/vim-scripts/TeTrIs.vim.git'
 
 
 " Import .vimrc.plug
-if filereadable(glob("~/.vimrc.plug"))
-    source ~/.vimrc.plug
+if filereadable(expand('~/.vimrc.plug'))
+  source ~/.vimrc.plug
 endif
 
 
@@ -142,7 +144,7 @@ call plug#end()
 
 
 " Import .vimrc.local
-if filereadable(glob("~/.vimrc.local"))
-    source ~/.vimrc.local
+if filereadable(expand('~/.vimrc.local'))
+  source ~/.vimrc.local
 endif
 

@@ -3,6 +3,8 @@
 " SETTINGS
 let mapleader=','
 
+filetype plugin indent on
+
 " screen
 set termguicolors
 set encoding=utf-8
@@ -36,6 +38,12 @@ syntax enable
 colorscheme monokai
 
 " PLUG
+if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
+    silent !curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs
+        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
 call plug#begin('~/.local/share/nvim/plugged')
 
 Plug 'https://github.com/scrooloose/nerdtree.git'
@@ -53,7 +61,7 @@ Plug 'https://github.com/vim-scripts/TeTrIs.vim.git'
 call plug#end()
 
 " nt
-map <silent><C-n> :NERDTreeToggle<cr>
+nnoremap <silent><C-n> :NERDTreeToggle<CR>
 " airline
 let g:airline#extensions#tabline#enabled=1
 let g:airline_theme='cool'
@@ -69,7 +77,7 @@ set updatetime=250
 let g:vimwiki_list = [{'path': '~/.vimwiki' }]
 
 " Local config
-if filereadable(glob("~/.nvim"))
+if filereadable(expand('~/.nvim'))
     source ~/.nvim
 endif
 
