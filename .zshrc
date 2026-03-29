@@ -20,7 +20,7 @@ precmd() {
 }
 
 setopt PROMPT_SUBST
-PROMPT='%F{red}%n%f on %F{yellow}%m%f in %F{green}%~/%f ${vcs_info_msg_0_}> '
+PROMPT='%F{red}%n%f on %F{yellow}%m%f at %F{green}%~/%f ${vcs_info_msg_0_}> '
 
 
 # Dir colors

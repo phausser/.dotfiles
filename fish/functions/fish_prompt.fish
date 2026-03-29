@@ -6,13 +6,13 @@ function fish_prompt
     printf '%s' (whoami)
 
     set_color normal
-    printf ' at '
+    printf ' on '
 
     set_color yellow
     echo -n (prompt_hostname)
 
     set_color normal
-    printf ' in '
+    printf ' at '
 
     set_color $fish_color_cwd
     printf '%s ' (prompt_pwd)

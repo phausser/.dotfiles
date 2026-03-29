@@ -45,7 +45,7 @@ __bash_update_prompt() {
     git_part="$(__bash_git_segment)"
 
     if [ -n "$TERM" ] && [ "$(tput colors 2>/dev/null || echo 0)" -ge 8 ]; then
-        PS1="\[\e[38;5;196m\]\u\[\e[0m\] on \[\e[38;5;220m\]\h\[\e[0m\] in \[\e[38;5;40m\]\w\[\e[0m\]${git_part} > "
+        PS1="\[\e[38;5;196m\]\u\[\e[0m\] on \[\e[38;5;220m\]\h\[\e[0m\] at \[\e[38;5;40m\]\w\[\e[0m\]${git_part} > "
     else
         PS1="\u@\h:\w${git_part} > "
     fi

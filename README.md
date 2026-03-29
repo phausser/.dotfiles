@@ -20,6 +20,7 @@ Persoenliche Konfigurationen fuer Shell, Editor, Terminal und Window Manager.
 - `.vimrc` - klassisches Vim Setup mit vim-plug
 - `.gvimrc` - GUI-spezifische Vim Einstellungen
 - `nvim/init.vim` - Neovim Setup mit vim-plug
+- `starship.toml` - Starship Prompt Konfiguration
 - `kitty/kitty.conf` - Kitty Terminal Theme und Verhalten
 - `fish/` - Fish Konfiguration (config, functions, completions)
 - `i3/config` - i3 Window Manager Konfiguration
@@ -32,6 +33,7 @@ Je nach genutzten Teilen der Dotfiles sind diese Tools sinnvoll:
 
 - `git`
 - `curl`
+- `starship`
 - `kitty`
 - `tmux`
 - `vim` oder `neovim`
