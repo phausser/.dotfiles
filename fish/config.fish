@@ -45,6 +45,6 @@ if test -e ~/.aliases
 end
 
 # Load optional machine-local fish overrides.
-if test -e ~/.fishrc
-    . ~/.fishrc
+if test -e ~/.fishrc.local
+    . ~/.fishrc.local
 end

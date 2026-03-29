@@ -50,6 +50,7 @@ Editor-Plugins werden ueber `vim-plug` verwaltet. In Vim/Neovim:
 
 Fuer lokale, nicht versionierte Anpassungen:
 
+- `~/.fishrc.local`
 - `~/.zshrc.local`
 - `~/.bashrc.local`
 - `~/.profile`
