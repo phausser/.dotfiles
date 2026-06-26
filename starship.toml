@@ -36,7 +36,7 @@ diverged = "<>"
 conflicted = "!"
 deleted = "-"
 renamed = "r"
-stashed = "$"
+stashed = '\$'
 
 [character]
 success_symbol = "[>](white) "
